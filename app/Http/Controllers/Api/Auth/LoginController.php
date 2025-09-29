@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
+use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -27,11 +28,11 @@ class LoginController extends Controller
         }
 
         $token = $user->createToken('auth_token')->plainTextToken;
-
-        return response()->json([
+        $data = [
             'access_token' => $token,
             'token_type' => 'Bearer',
             'user' => $user
-        ]);
+        ];
+        return ApiResponse::success($data, 'Đăng nhập thành công.');
     }
 }
