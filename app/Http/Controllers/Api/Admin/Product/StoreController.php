@@ -20,7 +20,7 @@ class StoreController extends Controller
             'images.*' => 'nullable|image|max:5120',
         ]);
 
-        $category = new Category();
+        $category = new Product();
         $category->name = $request->name;
         $category->description = $request->description;
         $category->save();
