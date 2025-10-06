@@ -39,8 +39,8 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            \App\Http\Middleware\GzipMiddleware::class,
-            \App\Http\Middleware\CacheAndGzipMiddleware::class,
+            // \App\Http\Middleware\GzipMiddleware::class,
+            // \App\Http\Middleware\CacheAndGzipMiddleware::class,
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

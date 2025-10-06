@@ -29,7 +29,7 @@ class StoreController extends Controller
             $urls = [];
 
             if ($request->hasFile('images')) {
-                $urls = GoogleDriveService::uploadMultiple($request->file('images'), 'categories');
+            
                 $category->images = json_encode($urls);
                 $category->save();
             }
